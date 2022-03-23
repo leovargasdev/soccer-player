@@ -4,6 +4,30 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Heading Pro Wide";
+  src: url("/fonts/heading-pro-wide-trial.bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Heading Pro Wide";
+  src: url("/fonts/heading-pro-wide-trial.extrabold.ttf");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Heading Pro Wide";
+  src: url("/fonts/heading-pro-wide-trial.heavy.ttf");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
 html {
   @media (max-width: 1080px) {
     font-size: 93.75%; // 15px
@@ -15,19 +39,15 @@ html {
 }
 
 :root {
-  --background: #f5f6fa;
+  --primary: #fff;
 
-  --primary: #373D4F;
-  --secondary: #9098AE;
-}
-
-body {
-  background: var(--background);
+  --black: #08100E;
+  --pink: #FF4093;
 }
 
 body, button, textarea, input {
   color: var(--primary);
-  font: 400 1rem "Roboto", sans-serif;
+  font: 700 1rem "Heading Pro Wide", sans-serif;
 }
 
 a {
