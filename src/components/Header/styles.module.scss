@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 90px;
+
+  strong {
+    font-size: 2.5rem;
+    line-height: 2.625rem;
+    font-weight: 800;
+
+    border-bottom: 4px solid var(--primary);
+  }
+
+  button {
+    width: 66px;
+    height: 100%;
+
+    background: var(--black);
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 6px;
+
+    span {
+      width: 18px;
+      height: 2px;
+      background: var(--primary);
+    }
+  }
+}

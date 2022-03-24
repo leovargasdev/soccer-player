@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 400px;
+    right: 0;
+    margin: 0 auto;
+
+    opacity: 0.3;
+  }
+
+  img {
+    z-index: 2;
+  }
+}

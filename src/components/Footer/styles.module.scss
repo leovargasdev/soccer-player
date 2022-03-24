@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.player__info {
+  display: flex;
+  align-items: stretch;
+  column-gap: 42px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 200px;
+    padding-top: 20px;
+    border-top: 1px solid var(--primary);
+
+    font-family: var(--font-sofia);
+
+    strong {
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      font-weight: 900;
+    }
+  }
+}
+
+.player__gallery {
+  width: 100%;
+  max-width: 630px;
+  overflow: hidden;
+
+  .player__gallery-content {
+    width: 2000px;
+    height: 200px;
+
+    display: flex;
+    column-gap: 20px;
+
+    .image {
+      width: 345px;
+      height: initial;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

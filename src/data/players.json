@@ -1,0 +1,27 @@
+[
+  {
+    "firstName": "KYLIAN",
+    "lastName": "MBAPPE",
+    "image": "/players/mbappe/person.png",
+    "club": "PARIS SAINT GERMAN",
+    "position": "STRIKER",
+    "color": "#0E2164",
+    "gallery": [
+      "/players/mbappe/gallery_1.png",
+      "/players/mbappe/gallery_2.png", 
+      "/players/mbappe/gallery_3.png"
+    ]
+  },
+  {
+    "firstName": "ERLING",
+    "lastName": "HAALAND",
+    "image": "/players/haaland/person.png",
+    "club": "BORUSSIA DORTMUND",
+    "position": "STRIKER",
+    "color": "#FFE70C",
+    "gallery": [
+      "/players/haaland/gallery_1.png",
+      "/players/haaland/gallery_2.png"
+    ]
+  }
+]
