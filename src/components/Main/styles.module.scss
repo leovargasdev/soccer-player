@@ -5,6 +5,10 @@
   flex-direction: column;
   align-items: flex-start;
 
+  h1, h2 {
+    text-transform: uppercase;
+  }  
+
   h2 {
     font-size: 1.375rem;
     line-height: 1.5rem;

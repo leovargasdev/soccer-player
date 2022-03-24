@@ -1,7 +1,7 @@
 [
   {
-    "firstName": "KYLIAN",
-    "lastName": "MBAPPE",
+    "firstName": "Kylian",
+    "lastName": "Mbappe",
     "image": "/players/mbappe/person.png",
     "club": "PARIS SAINT GERMAN",
     "position": "STRIKER",
@@ -13,8 +13,8 @@
     ]
   },
   {
-    "firstName": "ERLING",
-    "lastName": "HAALAND",
+    "firstName": "Erling",
+    "lastName": "Haaland",
     "image": "/players/haaland/person.png",
     "club": "BORUSSIA DORTMUND",
     "position": "STRIKER",
