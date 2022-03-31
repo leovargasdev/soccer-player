@@ -1,6 +1,9 @@
-import styles from './styles.module.scss'
+import { Pagination, Navigation } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { usePlayer } from 'hook/usePlayer'
+
+import styles from './styles.module.scss'
 
 export const Footer = () => {
   const { player } = usePlayer()
@@ -18,14 +21,26 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className={styles.player__gallery}>
-        <div className={styles['player__gallery-content']}>
-          {player.gallery.map(image => (
-            <div key={image} className={styles.image}>
-              <img src={image} />
-            </div>
+      <div>
+        <Swiper
+          slidesPerView={2}
+          spaceBetween={20}
+          slidesPerGroup={1}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className={styles.player__gallery}
+        >
+          {player.gallery.map((image, index) => (
+            <SwiperSlide key={image}>
+              <div className={styles.image}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <img src={image} />
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </footer>
   )
