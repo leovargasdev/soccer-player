@@ -5,7 +5,7 @@ export const Main = () => {
   const { player } = usePlayer()
 
   return (
-    <main className={styles.container}>
+    <main className={styles.container} data-aos="fade-right">
       <h2>{player.firstName}</h2>
       <h1>{player.lastName}</h1>
     </main>

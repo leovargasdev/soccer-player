@@ -8,7 +8,7 @@ export const Background = () => {
 
   return (
     <div className={styles.container}>
-      <img src={image} alt="" />
+      <img src={image} alt="" data-aos="fade-up" />
       <svg
         width="586"
         height="586"
