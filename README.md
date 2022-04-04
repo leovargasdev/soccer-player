@@ -32,8 +32,18 @@ Dependências usadas no projeto:
 -  [Next.js](https://nextjs.org/)
 -  [Sass](https://sass-lang.com/)
 -  [TypeScript](https://www.typescriptlang.org/)
+-  [SwiperJS](https://swiperjs.com/)
+-  [AOS](https://michalsnik.github.io/aos/)
 
 Também foi adicionado as ferramentas [**ESLint**](https://eslint.org/) e [**Prettier**](https://prettier.io/) para aumentar a produtividade e auxiliar a manter um padrão de código.
+
+### Funcionalidades
+
+- [x] Criar um carousel usando o **SwiperJS**.
+- [ ] Adicionar responsividade.
+- [x] Listar os jogadores disponíveis em um menu interativo.
+- [x] Criar animações de entrada.
+- [x] Utilizar o *useContext* para controlar o jogador ativo.
 
 ## 📥 Instalação e execução
 
