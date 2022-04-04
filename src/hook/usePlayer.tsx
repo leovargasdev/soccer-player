@@ -7,7 +7,7 @@ import { Player } from 'types/player'
 interface PlayerContextData {
   isLoading: boolean
   player: Player
-  changePlayer: () => void
+  changePlayer: (index: number) => void
 }
 
 const PlayerContext = createContext({} as PlayerContextData)
@@ -16,17 +16,19 @@ export const PlayerProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [player, setPlayer] = useState<Player>(players[0])
 
-  const changePlayer = () => {
-    setIsLoading(true)
+  const changePlayer = playerIndex => {
     const isActivePlayer = players.findIndex(
       findPlayer => player.lastName === findPlayer.lastName
     )
 
-    setPlayer(isActivePlayer === 0 ? players[1] : players[0])
-    setTimeout(() => {
-      setIsLoading(false)
-      AOS.refreshHard()
-    }, 50)
+    if (isActivePlayer !== playerIndex) {
+      setIsLoading(true)
+      setPlayer(players[playerIndex])
+      setTimeout(() => {
+        setIsLoading(false)
+        AOS.refreshHard()
+      }, 50)
+    }
   }
 
   return (
