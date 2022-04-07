@@ -3,12 +3,14 @@ import styles from './styles.module.scss'
 
 export const Background = () => {
   const {
-    player: { image }
+    player: { image, lastName, firstName }
   } = usePlayer()
 
   return (
     <div className={styles.container}>
-      <img src={image} alt="" data-aos="fade-up" />
+      <span data-aos="fade-up">
+        <img src={image} alt={`Imagem do jogador ${firstName} ${lastName}`} />
+      </span>
       <svg
         width="586"
         height="586"

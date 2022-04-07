@@ -1,12 +1,11 @@
 .container {
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   right: 0;
 
   display: flex;
   justify-content: center;
-  overflow: hidden;
 
   svg {
     position: absolute;
@@ -18,7 +17,7 @@
     opacity: 0.3;
   }
 
-  img {
+  span {
     z-index: 2;
   }
 }

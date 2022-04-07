@@ -46,8 +46,11 @@ html {
   --black: #08100E;
   --pink: #FF4093;
 
-
   --font-sofia: 'Sofia Pro', sans-serif;
+}
+
+body {
+  overflow: hidden;
 }
 
 body, button, textarea, input {
