@@ -23,5 +23,34 @@
     font-weight: 800;
     letter-spacing: 0.06em;
     transform: translateX(-15px);
+
+    @media(max-width: 1500px) {
+      font-size: 8rem;
+      line-height: 9rem;
+    }
+
+    @media(max-width: 768px) {
+      font-size: 6rem;
+      line-height: 5rem;
+      transform: translateX(-5px);
+    }
+  }
+
+  @media(max-width: 1024px) {
+    margin-bottom: 4rem;
+  }
+
+  @media(max-width: 650px) {
+    h2 {
+      font-size: 1rem;
+      line-height: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 3rem;
+      transform: translateX(-5px);
+    }
   }
 }

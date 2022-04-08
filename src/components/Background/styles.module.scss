@@ -1,23 +1,51 @@
 .container {
   position: absolute;
-  bottom: -10px;
+  bottom: -4px;
   left: 0;
   right: 0;
 
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+
+  min-height: 100vh;
 
   svg {
     position: absolute;
-    top: 0;
-    left: 400px;
+    left: 300px;
     right: 0;
+    bottom: 280px;
     margin: 0 auto;
 
     opacity: 0.3;
+
+    @media(max-width: 1200px) {
+      width: 400px;
+      left: 200px;
+    }
   }
 
   span {
     z-index: 2;
+  }
+
+  @media(max-width: 768px) {
+    span img {
+      max-width: 90vw;
+      max-height: 80vh;
+    }
+
+    svg {
+      width: 60vw;
+      left: 40px;
+      bottom: 240px;
+    }
+  }
+
+  @media(max-width: 650px) {
+
+    svg {
+      bottom: 0;
+    }
   }
 }

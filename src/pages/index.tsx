@@ -19,14 +19,14 @@ const HomePage = () => {
           Soccer Player • {player.firstName + ' ' + player.lastName}
         </title>
       </Head>
-      {!isLoading && (
-        <>
-          <Background />
-          <Header />
-          <Main />
-          <Footer />
-        </>
-      )}
+      {/* {!isLoading && (
+        <> */}
+      <Background />
+      <Header />
+      <Main />
+      <Footer />
+      {/* </>
+      )} */}
     </div>
   )
 }

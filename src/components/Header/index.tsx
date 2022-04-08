@@ -16,7 +16,6 @@ export const Header = () => {
   return (
     <header className={styles.container}>
       <strong>{handleFirstCharAt()}</strong>
-      {/* <button type="button" onClick={changePlayer}> */}
       <div className={styles.navigation}>
         <button
           type="button"

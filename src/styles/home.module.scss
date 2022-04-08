@@ -10,4 +10,12 @@
   main, footer {
     z-index: 2;
   }
+
+  @media(max-width: 1024px) {
+    padding: 24px;
+  }
+
+  @media(max-width: 650px) {
+    padding: 48px 32px 24px;
+  }
 }

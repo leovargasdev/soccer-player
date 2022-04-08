@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  z-index: 3;
 
   display: flex;
   align-items: flex-start;
@@ -7,11 +8,15 @@
   padding-right: 90px;
 
   strong {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 2.625rem;
     font-weight: 800;
 
     border-bottom: 4px solid var(--primary);
+  }
+
+  @media(max-width: 1024px) {
+    padding-right: 0;
   }
 }
 
@@ -25,8 +30,6 @@
 
     width: 66px;
     height: 66px;
-
-    // border-radius: 50%;
     background: transparent;
 
     display: flex;
@@ -93,6 +96,22 @@
 
     &.active {
       clip-path: circle(400px at center);
+    }
+  }
+
+  @media(max-width: 768px) {
+    button {
+      width: 48px;
+      height: 46px;
+    }
+
+    ul {
+      height: 180px;
+      clip-path: circle(24px at 216px 24px);
+
+      li {
+        font-size: 0.75rem;
+      }
     }
   }
 }
