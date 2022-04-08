@@ -14,7 +14,7 @@ const PlayerContext = createContext({} as PlayerContextData)
 
 export const PlayerProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [player, setPlayer] = useState<Player>(players[0])
+  const [player, setPlayer] = useState<Player>(players[3])
 
   const changePlayer = playerIndex => {
     const isActivePlayer = players.findIndex(

@@ -25,20 +25,51 @@
     "image": "/players/haaland/person.png",
     "club": "BORUSSIA DORTMUND",
     "position": "STRIKER",
-    "color": "#FFE70C",
+    "color": "#efc52d",
     "gallery": [
       "/players/haaland/gallery_1.png",
       "/players/haaland/gallery_2.png",
-     "/players/haaland/gallery_3.jpeg",
-     "/players/haaland/gallery_4.jpeg",
-     "/players/haaland/gallery_5.jpeg",
-     "/players/haaland/gallery_6.jpeg",
-     "/players/haaland/gallery_7.jpeg",
-     "/players/haaland/gallery_8.jpeg",
-     "/players/haaland/gallery_9.jpeg",
-     "/players/haaland/gallery_10.jpeg",
-     "/players/haaland/gallery_11.jpeg",
-     "/players/haaland/gallery_12.jpeg"
+      "/players/haaland/gallery_3.jpeg",
+      "/players/haaland/gallery_4.jpeg",
+      "/players/haaland/gallery_5.jpeg",
+      "/players/haaland/gallery_6.jpeg",
+      "/players/haaland/gallery_7.jpeg",
+      "/players/haaland/gallery_8.jpeg",
+      "/players/haaland/gallery_9.jpeg",
+      "/players/haaland/gallery_10.jpeg",
+      "/players/haaland/gallery_11.jpeg",
+      "/players/haaland/gallery_12.jpeg"
+    ]
+  },
+  {
+    "firstName": "Kevin",
+    "lastName": "Bruyne",
+    "image": "/players/bruyne/person.png",
+    "club": "Manchester city",
+    "position": "midfielder",
+    "color": "#71c3ee",
+    "gallery": [
+      "players/bruyne/gallery_1.jpg",
+      "players/bruyne/gallery_2.jpg",
+      "players/bruyne/gallery_3.jpg",
+      "players/bruyne/gallery_4.jpg",
+      "players/bruyne/gallery_5.jpg"
+    ]
+  },
+  {
+    "firstName": "jr",
+    "lastName": "Neymar",
+    "image": "/players/neymar/person.png",
+    "club": "PSG",
+    "position": "STRIKER",
+    "color": "#151b2a",
+    "gallery": [
+      "players/neymar/gallery_1.jpg",
+      "players/neymar/gallery_2.jpeg",
+      "players/neymar/gallery_3.jpg",
+      "players/neymar/gallery_4.jpg",
+      "players/neymar/gallery_5.jpeg",
+      "players/neymar/gallery_6.jpg"
     ]
   }
 ]

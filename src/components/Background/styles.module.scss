@@ -29,6 +29,11 @@
     z-index: 2;
   }
 
+  img {
+    max-height: 90vh;
+    width: auto;
+  }
+
   @media(max-width: 768px) {
     span img {
       max-width: 90vw;
