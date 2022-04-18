@@ -7,7 +7,7 @@ export const Background = () => {
   } = usePlayer()
 
   return (
-    <div className={styles.container} data-aos="fade-up">
+    <div className={styles.container} id="images">
       <span>
         <img src={image} alt={`Imagem do jogador ${firstName} ${lastName}`} />
       </span>

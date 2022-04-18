@@ -1,8 +1,9 @@
+import { useState } from 'react'
+
 import { usePlayer } from 'hook/usePlayer'
 import styles from './styles.module.scss'
 
 import players from 'data/players.json'
-import { useState } from 'react'
 
 export const Header = () => {
   const [backgroundHover, setBackgroundHover] = useState<string>('')

@@ -9,7 +9,7 @@ export const Footer = () => {
   const { player } = usePlayer()
 
   return (
-    <footer className={styles.container} data-aos="fade-left">
+    <footer className={styles.container}>
       <div className={styles.player__info}>
         <div>
           <strong>CLUB</strong>

@@ -10,7 +10,7 @@ import { usePlayer } from 'hook/usePlayer'
 import styles from 'styles/home.module.scss'
 
 const HomePage = () => {
-  const { player, isLoading } = usePlayer()
+  const { player } = usePlayer()
 
   return (
     <div className={styles.container} style={{ background: player.color }}>
@@ -19,14 +19,10 @@ const HomePage = () => {
           Soccer Player • {player.firstName + ' ' + player.lastName}
         </title>
       </Head>
-      {!isLoading && (
-        <>
-          <Background />
-          <Header />
-          <Main />
-          <Footer />
-        </>
-      )}
+      <Background />
+      <Header />
+      <Main />
+      {/* <Footer /> */}
     </div>
   )
 }
