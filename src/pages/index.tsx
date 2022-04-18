@@ -22,7 +22,7 @@ const HomePage = () => {
       <Background />
       <Header />
       <Main />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

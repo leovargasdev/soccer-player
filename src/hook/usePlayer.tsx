@@ -38,10 +38,18 @@ export const PlayerProvider = ({ children }) => {
           },
           '-=800'
         )
+        .add(
+          {
+            targets: '#footer',
+            translateX: [0, -600],
+            opacity: [1, 0]
+          },
+          '-=800'
+        )
+
+      setTimeout(() => setPlayer(players[playerIndex]), 800)
 
       setTimeout(() => {
-        setPlayer(players[playerIndex])
-
         anime
           .timeline({
             easing: 'easeOutExpo',
@@ -60,7 +68,15 @@ export const PlayerProvider = ({ children }) => {
             },
             '-=800'
           )
-      }, 800)
+          .add(
+            {
+              targets: '#footer',
+              translateX: [300, 0],
+              opacity: [0, 1]
+            },
+            '-=800'
+          )
+      }, 900)
     }
   }
 

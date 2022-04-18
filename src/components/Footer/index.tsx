@@ -7,9 +7,8 @@ import styles from './styles.module.scss'
 
 export const Footer = () => {
   const { player } = usePlayer()
-
   return (
-    <footer className={styles.container}>
+    <footer className={styles.container} id="footer">
       <div className={styles.player__info}>
         <div>
           <strong>CLUB</strong>

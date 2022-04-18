@@ -127,15 +127,18 @@
     }
   }
 
-  div:nth-child(2), div:nth-child(1) {
+  > div::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 44px;
+    height: 28px;
     border-radius: 50%;
     background: var(--primary);
 
-    &:after {
-      font-size: 1rem;
-      color: var(--black);
-    }
+    font-size: 0.75rem;
+    color: var(--black);
   }
 
   @media(max-width: 1400px) {
@@ -150,13 +153,11 @@
       }
     }
 
-    > div:nth-child(2), > div:nth-child(1) {
+    > div::after {
       width: 32px;
       height: 32px;
 
-      &:after {
-        font-size: 0.5rem;
-      }
+      font-size: 0.5rem;
     }
   }
 
