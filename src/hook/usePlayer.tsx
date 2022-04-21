@@ -11,8 +11,33 @@ interface PlayerContextData {
 
 const PlayerContext = createContext({} as PlayerContextData)
 
+const TIME_ANIMATION = 800
+
 export const PlayerProvider = ({ children }) => {
   const [player, setPlayer] = useState<Player>(players[3])
+
+  const animationOut = () =>
+    anime
+      .timeline({ easing: 'easeOutExpo', duration: TIME_ANIMATION })
+      .add({ targets: 'main', translateX: [0, 500], opacity: [1, 0] })
+      .add({ targets: '#images', opacity: [1, 0] }, `-=${TIME_ANIMATION}`)
+      .add(
+        { targets: '#footer', translateX: [0, -600], opacity: [1, 0] },
+        `-=${TIME_ANIMATION}`
+      )
+
+  const animationIn = () =>
+    anime
+      .timeline({ easing: 'easeOutExpo', duration: TIME_ANIMATION })
+      .add({ targets: 'main', translateX: [-100, 0], opacity: [0, 1] })
+      .add(
+        { targets: '#images', translateY: [100, 0], opacity: [0, 1] },
+        `-=${TIME_ANIMATION}`
+      )
+      .add(
+        { targets: '#footer', translateX: [100, 0], opacity: [0, 1] },
+        `-=${TIME_ANIMATION}`
+      )
 
   const changePlayer = playerIndex => {
     const isActivePlayer = players.findIndex(
@@ -20,63 +45,9 @@ export const PlayerProvider = ({ children }) => {
     )
 
     if (isActivePlayer !== playerIndex) {
-      anime
-        .timeline({
-          easing: 'easeOutExpo',
-          duration: 800
-        })
-        .add({
-          targets: 'main',
-          translateX: [0, 500],
-          opacity: [1, 0]
-        })
-        .add(
-          {
-            targets: '#images',
-            translateY: [0, -600],
-            opacity: [1, 0]
-          },
-          '-=800'
-        )
-        .add(
-          {
-            targets: '#footer',
-            translateX: [0, -600],
-            opacity: [1, 0]
-          },
-          '-=800'
-        )
-
-      setTimeout(() => setPlayer(players[playerIndex]), 800)
-
-      setTimeout(() => {
-        anime
-          .timeline({
-            easing: 'easeOutExpo',
-            duration: 800
-          })
-          .add({
-            targets: 'main',
-            translateX: [-200, 0],
-            opacity: [0, 1]
-          })
-          .add(
-            {
-              targets: '#images',
-              translateY: [300, 0],
-              opacity: [0, 1]
-            },
-            '-=800'
-          )
-          .add(
-            {
-              targets: '#footer',
-              translateX: [300, 0],
-              opacity: [0, 1]
-            },
-            '-=800'
-          )
-      }, 900)
+      animationOut()
+      setTimeout(() => setPlayer(players[playerIndex]), 600)
+      setTimeout(() => animationIn(), 900)
     }
   }
 
