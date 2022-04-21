@@ -4,9 +4,11 @@ import { createContext, useContext, useState } from 'react'
 import players from 'data/players.json'
 import { Player } from 'types/player'
 
+type CustomCSSProperties = { [key in `--${string}`]: string }
 interface PlayerContextData {
   loading: boolean
   player: Player
+  background: CustomCSSProperties
   changePlayer: (index: number) => void
 }
 
@@ -17,6 +19,10 @@ const TIME_ANIMATION = 800
 export const PlayerProvider = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(false)
   const [player, setPlayer] = useState<Player>(players[3])
+  const [background, setBackground] = useState<CustomCSSProperties>({
+    '--to': '',
+    '--from': players[3].color
+  })
 
   const animationOut = () =>
     anime
@@ -49,6 +55,10 @@ export const PlayerProvider = ({ children }) => {
 
       if (indexPlayerActive !== playerIndex) {
         setLoading(true)
+        setBackground({
+          '--to': player.color,
+          '--from': players[playerIndex].color
+        })
 
         animationOut()
         setTimeout(() => setPlayer(players[playerIndex]), 600)
@@ -61,7 +71,9 @@ export const PlayerProvider = ({ children }) => {
   }
 
   return (
-    <PlayerContext.Provider value={{ player, changePlayer, loading }}>
+    <PlayerContext.Provider
+      value={{ player, changePlayer, loading, background }}
+    >
       {children}
     </PlayerContext.Provider>
   )
