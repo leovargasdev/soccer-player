@@ -6,28 +6,28 @@ import styles from './styles.module.scss'
 import players from 'data/players.json'
 
 export const Header = () => {
-  const [backgroundHover, setBackgroundHover] = useState<string>('')
-  const [activeNavigation, setActiveNavigation] = useState<boolean>(false)
-  const { changePlayer, player } = usePlayer()
+  const { changePlayer, player, loading } = usePlayer()
 
-  const handleFirstCharAt = () => {
-    return player.lastName.charAt(0)
-  }
+  const [isShow, setIsShow] = useState<boolean>(false)
+  const [backgroundHover, setBackgroundHover] = useState<string>('')
+
+  const handleFirstCharAt = () => player.lastName.charAt(0)
 
   return (
     <header className={styles.container}>
       <strong>{handleFirstCharAt()}</strong>
-      <div className={styles.navigation}>
+
+      <div className={`${styles.navigation} ${isShow ? styles.active : ''}`}>
         <button
           type="button"
-          onClick={() => setActiveNavigation(!activeNavigation)}
-          className={activeNavigation ? styles['active-button'] : ''}
+          className={styles.navigation__button}
+          onClick={() => setIsShow(state => !state)}
         >
           <span />
           <span />
         </button>
 
-        <ul className={activeNavigation ? styles.active : ''}>
+        <ul className={styles.navigation__items}>
           {players.map((playerItem, index) => (
             <li
               key={playerItem.firstName}
@@ -36,6 +36,7 @@ export const Header = () => {
                   backgroundHover === playerItem.lastName ? player.color : ''
               }}
               onClick={() => changePlayer(index)}
+              className={loading ? styles.disabled : ''}
               onMouseOver={() => setBackgroundHover(playerItem.lastName)}
               onMouseLeave={() => setBackgroundHover('')}
             >

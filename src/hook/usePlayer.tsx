@@ -5,6 +5,7 @@ import players from 'data/players.json'
 import { Player } from 'types/player'
 
 interface PlayerContextData {
+  loading: boolean
   player: Player
   changePlayer: (index: number) => void
 }
@@ -14,6 +15,7 @@ const PlayerContext = createContext({} as PlayerContextData)
 const TIME_ANIMATION = 800
 
 export const PlayerProvider = ({ children }) => {
+  const [loading, setLoading] = useState<boolean>(false)
   const [player, setPlayer] = useState<Player>(players[3])
 
   const animationOut = () =>
@@ -40,19 +42,26 @@ export const PlayerProvider = ({ children }) => {
       )
 
   const changePlayer = playerIndex => {
-    const isActivePlayer = players.findIndex(
-      findPlayer => player.lastName === findPlayer.lastName
-    )
+    if (!loading) {
+      const indexPlayerActive = players.findIndex(
+        findPlayer => player.lastName === findPlayer.lastName
+      )
 
-    if (isActivePlayer !== playerIndex) {
-      animationOut()
-      setTimeout(() => setPlayer(players[playerIndex]), 600)
-      setTimeout(() => animationIn(), 900)
+      if (indexPlayerActive !== playerIndex) {
+        setLoading(true)
+
+        animationOut()
+        setTimeout(() => setPlayer(players[playerIndex]), 600)
+        setTimeout(() => {
+          animationIn()
+          setLoading(false)
+        }, 900)
+      }
     }
   }
 
   return (
-    <PlayerContext.Provider value={{ player, changePlayer }}>
+    <PlayerContext.Provider value={{ player, changePlayer, loading }}>
       {children}
     </PlayerContext.Provider>
   )
