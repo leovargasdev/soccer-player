@@ -13,6 +13,11 @@ export const Header = () => {
 
   const handleFirstCharAt = () => player.lastName.charAt(0)
 
+  const handleChangePlayer = (playerIndex: number) => {
+    changePlayer(playerIndex)
+    setIsShow(false)
+  }
+
   return (
     <header className={styles.container}>
       <strong>{handleFirstCharAt()}</strong>
@@ -35,7 +40,7 @@ export const Header = () => {
                 background:
                   backgroundHover === playerItem.lastName ? player.color : ''
               }}
-              onClick={() => changePlayer(index)}
+              onClick={() => handleChangePlayer(index)}
               className={loading ? styles.disabled : ''}
               onMouseOver={() => setBackgroundHover(playerItem.lastName)}
               onMouseLeave={() => setBackgroundHover('')}

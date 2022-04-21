@@ -55,14 +55,14 @@ export const PlayerProvider = ({ children }) => {
 
       if (indexPlayerActive !== playerIndex) {
         setLoading(true)
-        setBackground({
-          '--to': player.color,
-          '--from': players[playerIndex].color
-        })
 
         animationOut()
         setTimeout(() => setPlayer(players[playerIndex]), 600)
         setTimeout(() => {
+          setBackground({
+            '--to': player.color,
+            '--from': players[playerIndex].color
+          })
           animationIn()
           setLoading(false)
         }, 900)
